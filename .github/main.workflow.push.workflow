@@ -1,5 +1,5 @@
 workflow "Apply PR labels" {
-  on = "push"
+  on = "pull_request"
   resolves = "Apply labels"
 }
 
