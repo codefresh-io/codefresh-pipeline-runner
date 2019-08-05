@@ -1,4 +1,4 @@
-FROM alpine
+FROM codefresh/cli
 
 LABEL "com.github.actions.name"="test-pipeline-runner"
 LABEL "com.github.actions.description"="allow run custom codefresh pipeline"
