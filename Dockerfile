@@ -9,7 +9,7 @@ LABEL "repository"="https://github.com/codefresh-io/codefresh-github-action-test
 LABEL "homepage"="https://github.com/codefresh-io/codefresh-github-action-test"
 LABEL "maintainer"="Octocat <denys@codefresh.io>"
 
-ADD entrypoint.sh /entrypoint.sh
+ADD entrypoint.sh entrypoint.sh
 CMD chmod +x entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
