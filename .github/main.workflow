@@ -4,6 +4,6 @@ workflow "test-runner" {
 }
 
 action "test-pipeline-runner" {
-  uses = "./"
+  uses = "./codefresh-github-action"
   args = ["arg1", "arg2"]
 }
