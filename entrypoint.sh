@@ -2,4 +2,5 @@
 
 echo STARTED
 echo $*
+printenv
 echo END
