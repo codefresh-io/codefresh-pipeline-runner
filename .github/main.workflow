@@ -5,5 +5,5 @@ workflow "test-runner" {
 
 action "test-pipeline-runner" {
   uses = "./"
-  args = ["argument"]
+  args = ["arg1", "arg2"]
 }
