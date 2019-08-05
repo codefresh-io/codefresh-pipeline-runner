@@ -1,2 +1,1 @@
-sh -c "echo start"
-sh -c "echo $*"
+sh -c "echo started"
