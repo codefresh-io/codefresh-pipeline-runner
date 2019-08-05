@@ -5,5 +5,6 @@ workflow "test-runner" {
 
 action "test-pipeline-runner" {
   uses = "./codefresh-github-action"
-  args = ["arg1", "arg2"]
+  args = ["test action1", "test action 2"]
+  secrets = ["GITHUB_TOKEN"]
 }
