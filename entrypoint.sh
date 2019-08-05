@@ -1,3 +1,4 @@
 #!/bin/sh
 
-echo "started"
+echo STARTED
+echo echo $*
