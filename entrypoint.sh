@@ -1,1 +1,3 @@
-sh -c "echo started"
+#!/bin/sh
+
+echo "started"
