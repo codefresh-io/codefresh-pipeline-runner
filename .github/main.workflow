@@ -6,4 +6,3 @@ workflow "test-runner" {
 action "test-pipeline-runner" {
   uses = "./"
 }
-
