@@ -6,7 +6,7 @@ echo ------------------
 #codefresh auth use-contex mycontext
 
 #cd $GITHUB_EVENT_PATH
-cat /github/workspace/event.json
+cat ../workspace/event.json
 
 #codefresh run $PIPELINE_NAME --trigger=$TRIGGER_NAME --sha=$GITHUB_SHA --branch=$BRANCH
 
