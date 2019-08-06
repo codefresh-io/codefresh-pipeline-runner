@@ -9,4 +9,4 @@ codefresh auth use-contex mycontext
 
 codefresh run $PIPELINE_NAME
 
-ehco =======================
+echo =======================
