@@ -1,0 +1,9 @@
+name: 'Codefresh pipeline runner'
+description: 'Github action that run codefresh pipeline'
+author: 'codefresh'
+branding:
+  icon: 'arrow-right-circle'
+  color: 'green'
+runs:
+  using: 'bash'
+  main: 'runner-entrypoint.sh'
