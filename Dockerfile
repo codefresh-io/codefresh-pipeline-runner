@@ -1,7 +1,7 @@
 FROM codefresh/cli
 
-LABEL "com.github.actions.name"="test-pipeline-runner"
-LABEL "com.github.actions.description"="allow run custom codefresh pipeline"
+LABEL "com.github.actions.name"="codefresh-pipeline-runner"
+LABEL "com.github.actions.description"="allows to run custom codefresh pipelines"
 LABEL "com.github.actions.icon"="mic"
 LABEL "com.github.actions.color"="purple"
 

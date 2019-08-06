@@ -1,13 +1,9 @@
-workflow "test-runner" {
+workflow "pipeline-runner" {
   on = "push"
-  resolves = ["test-pipeline-runner"]
+  resolves = ["run-pipeline"]
 }
 
-action "test-pipeline-runner" {
+action "run-pipeline" {
   uses = "./"
   secrets = ["CF_API_KEY"]
-  env = {
-    PIPELINE_NAME = "runp/runp"
-    TRIGGER_NAME = "codefresh-io/codefresh-github-action-test"
-  }
 }
