@@ -2,14 +2,17 @@
 
 echo ------------------
 
-cat /github/workflow/event.json
+# parse branch
+BRANCH=$(cat /github/workflow/event.json | jq -r .ref | awk -F '/' '{print $3}')
 
-#codefresh auth create-context mycontext --api-key $CF_API_KEY
-#codefresh auth use-contex mycontext
+if [-z "$BRANCH"]
+then
+      BRANCH=$(cat /github/workflow/event.json | jq -r head.ref)
+fi
 
-#cd $GITHUB_EVENT_PATH
-#cat ../workspace/event.json
+codefresh auth create-context mycontext --api-key $CF_API_KEY
+codefresh auth use-contex mycontext
 
-#codefresh run $PIPELINE_NAME --trigger=$TRIGGER_NAME --sha=$GITHUB_SHA --branch=$BRANCH
+codefresh run $PIPELINE_NAME --trigger=$TRIGGER_NAME --sha=$GITHUB_SHA --branch=$BRANCH
 
 echo =======================
