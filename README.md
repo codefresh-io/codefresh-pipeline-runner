@@ -44,12 +44,13 @@ Now next time you commit anything in your Github repository the Codefresh pipeli
 ## Usage
 An example to run codefresh pipeline that can compile, test , docker build and deploy to kubernetes
 ```
-action "run pipeline" {
-  uses = "./"
-  secrets = ["CF_API_KEY"]
-  env = {
-    TRIGGER_NAME = "codefresh-trigger"
-    PIPELINE_NAME = "codefresh-pipeline"
-  }
-}
+name: 'Codefresh pipeline runner'
+description: 'Github action that run codefresh pipeline'
+author: 'codefresh'
+branding:
+  icon: 'arrow-right-circle'
+  color: 'green'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
 ``` 
