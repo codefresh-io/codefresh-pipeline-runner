@@ -2,8 +2,7 @@
 
 echo ------------------
 
-cd ../workspace && pwd && ls
-
+find /github/ -name "event.json"
 
 
 
