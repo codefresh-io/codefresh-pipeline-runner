@@ -2,20 +2,7 @@
 
 echo ------------------
 
-ls
-
-echo 111111111111
-
-cd pwd
-
-echo 22222
-
-cd .. && pwd && ls
-
-echo 333333333333
-
-cd / pwd && ls
-
+cd ../workspace && pwd && ls
 
 
 
