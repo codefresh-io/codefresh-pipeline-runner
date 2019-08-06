@@ -10,7 +10,9 @@ then
 	BRANCH=$(cat $GITHUB_EVENT_PATH | jq -r head.ref)
 fi
 
-codefresh auth create-context mycontext --api-key $CF_API_KEY
-codefresh auth use-contex mycontext
-echo $CF_API_KEY
-codefresh run $PIPELINE_NAME --trigger=$TRIGGER_NAME --sha=$GITHUB_SHA --branch=$BRANCH
+echo "branch is $BRANCH"
+
+codefresh auth create-context context --api-key $CF_API_KEY
+codefresh auth use-contex context
+
+codefresh run $PIPELINE_NAME --trigger=$TRIGGER_NAME --branch=$BRANCH
