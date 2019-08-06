@@ -2,9 +2,7 @@
 
 echo ------------------
 
-find /github/ -name "event.json"
-
-
+cat /github/workflow/event.json
 
 #codefresh auth create-context mycontext --api-key $CF_API_KEY
 #codefresh auth use-contex mycontext
