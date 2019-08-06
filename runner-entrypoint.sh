@@ -10,8 +10,6 @@ then
 	BRANCH=$(cat $GITHUB_EVENT_PATH | jq -r head.ref)
 fi
 
-echo "branch is $BRANCH"
-
 codefresh auth create-context context --api-key $CF_API_KEY
 codefresh auth use-contex context
 
