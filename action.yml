@@ -5,5 +5,5 @@ branding:
   icon: 'arrow-right-circle'
   color: 'green'
 runs:
-  using: 'bash'
-  main: 'runner-entrypoint.sh'
+  using: 'docker'
+  image: 'Dockerfile'
