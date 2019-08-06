@@ -5,4 +5,5 @@ workflow "test-runner" {
 
 action "test-pipeline-runner" {
   uses = "./"
+  secrets = ["GITHUB_TOKEN", "CF_API_KEY", "PIPELINE_NAME"]
 }
