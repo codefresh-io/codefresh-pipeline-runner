@@ -12,7 +12,7 @@ This repository holds a Github action that can be used to call existing [Codefre
 
 ## Prerequisites
 
-Make sure that you have 
+Make sure that you have
 
 * a Github account with Actions enabled
 * a [Codefresh account](https://codefresh.io/docs/docs/getting-started/create-a-codefresh-account/) with one or more existing pipelines ready
@@ -23,7 +23,7 @@ Make sure that you have
 
 The Github workflow is placed on the [push event](https://developer.github.com/v3/activity/events/types/#pushevent) and therefore starts whenever a Git commit happens. The Workflow has a single action that starts the Codefresh pipeline runner.
 
-The pipeline runner is a Docker image with the Codefresh CLI. It uses the Codefresh API token to authenticate to Codefresh and then calls a an existing pipeline via its trigger. 
+The pipeline runner is a Docker image with the Codefresh CLI. It uses the Codefresh API token to authenticate to Codefresh and then calls a an existing pipeline via its trigger.
 
 The result is that all the details from the Git push (i.e. the GIT hash) are transferred to the Codefresh pipeline that gets triggered remotely
 
@@ -36,13 +36,7 @@ Select the pipeline runner action and click the "Edit" button. On the right side
 * A secret with name `CF_API_KEY` and value your Codefresh API token
 * An environment variable called `PIPELINE_NAME` with a value of `<project_name>/<pipeline_name>`
 * An environment variable called `TRIGGER_NAME` with trigger name attached to this pipeline. See the [triggers section](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/triggers/) for more information
-* An environment variable called `BRANCH` with the git branch that you want to use for the trigger.
 
-Click the Done button to save your changes.
+Click the Done button to save your changes and commit.
 
 Now next time you commit anything in your Github repository the Codefresh pipeline will also execute.
-
-
-
-
-
