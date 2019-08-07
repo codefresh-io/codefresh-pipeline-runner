@@ -64,17 +64,19 @@ runs:
 An example of workflow
 
 ```
-workflow "pipeline runner" {
-  on = "push"
-  resolves = "run pipeline"
-}
+version: 1.0
+on:
+  push:
+    branches:
+    - master
 
-action "run pipeline" {
-  uses = "./"
-  env = {
-    PIPELINE_NAME = "codefresh-pipeline"
-    TRIGGER_NAME = "codefresh-trigger"
-  }
-  secrets = ["CF_API_KEY"]
-}
+jobs:
+  build:
+    actions:
+    - name: 'run pipeline'
+      uses: ./
+      with:
+        PIPELINE_NAME: 'codefresh-pipeline'
+        TRIGGER_NAME: 'codefresh-trigger'
+      id: run-pipeline
 ```
