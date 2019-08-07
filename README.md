@@ -72,7 +72,7 @@ on:
 
 jobs:
   build:
-    actions:
+    steps:
     - name: 'run pipeline'
       uses: ./
       with:
