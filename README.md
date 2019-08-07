@@ -1,6 +1,6 @@
 # Codefresh pipeline runner
 
-This action runs [codefresh](https://g.codefresh.io) pipeline using codefresh api key
+This repository holds a Github action that can be used to call existing [Codefresh pipelines](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/). It is based on the [Codefresh CLI](https://codefresh-io.github.io/cli/) which can execute Codefresh pipelines remotely (using an API key for authentication). The Codefresh CLI is already available as a [public Docker image](https://hub.docker.com/r/codefresh/cli/), so creating a Github action with it is a trivial process.
 
 # Integrating Codefresh pipelines with GitHub actions
 
@@ -8,11 +8,6 @@ GitHub actions are a flexible way to respond to GitHub events and perform one or
 when a specific GitHub event happens. Github actions can also use Codefresh pipeline as a back-end
 resulting in a very powerful combination where the first action starts from GitHub, but Codefresh takes care
 of the actual compilation or deployment in a pipeline.
-
-
-## Codefresh Github action
-
-This repository holds a Github action that can be used to call existing [Codefresh pipelines](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/). It is based on the [Codefresh CLI](https://codefresh-io.github.io/cli/) which can execute Codefresh pipelines remotely (using an API key for authentication). The Codefresh CLI is already available as a [public Docker image](https://hub.docker.com/r/codefresh/cli/), so creating a Github action with it is a trivial process.
 
 ## Prerequisites
 
