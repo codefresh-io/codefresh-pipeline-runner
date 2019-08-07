@@ -1,8 +1,8 @@
-# Integrating Codefresh pipelines with Github actions
+# Integrating Codefresh pipelines with GitHub actions
 
-Github actions are a flexible way to respond to Github events and perform one or more tasks
-when a specific Github event happens. Github actions can also use Codefresh pipeline as a back-end
-resulting in a very powerful combination where the first action starts from Github, but Codefresh takes care
+GitHub actions are a flexible way to respond to GitHub events and perform one or more tasks
+when a specific GitHub event happens. Github actions can also use Codefresh pipeline as a back-end
+resulting in a very powerful combination where the first action starts from GitHub, but Codefresh takes care
 of the actual compilation or deployment in a pipeline.
 
 
