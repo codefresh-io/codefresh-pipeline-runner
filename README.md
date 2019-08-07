@@ -59,6 +59,17 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+inputs:
+  PIPELINE_NAME:
+    description: 'Codefresh pipeline name in format <project_name>/<pipeline_name>'
+    required: true
+  TRIGGER_NAME:
+    description: 'Trigger name attached to this pipeline'
+    required: false
+outputs: 
+  status:
+    description: 'Pipeline status that was executed on codefresh'
+
 ```
 
 An example of workflow
@@ -78,5 +89,6 @@ jobs:
       with:
         PIPELINE_NAME: 'codefresh-pipeline'
         TRIGGER_NAME: 'codefresh-trigger'
+        CF_API_KEY: ${{ secrets.GITHUB_TOKEN }}
       id: run-pipeline
 ```
