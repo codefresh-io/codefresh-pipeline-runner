@@ -1,6 +1,6 @@
 # Codefresh pipeline runner GitHub Action
 
-Codefresh is a CI/CD platform that engineers actually love to use. The [Codefresh pipeline](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/) runner GitHub action will trigger an existing Codefresh pipeline from a GitHub action.
+Codefresh is a CI/CD platform that engineers actually love to use. The [Codefresh pipeline](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/) runner GitHub action will trigger an existing Codefresh pipeline from a GitHub action. Codefresh pipelines can be used to build applications, run tests, deploy to Kubernetes, run canary or blue/gree deployments, deploy serverless functions, really just about everything while tying all deployments back to their commits, authors, and contributors. 
 
 It is based on the [Codefresh CLI](https://codefresh-io.github.io/cli/) which can execute Codefresh pipelines remotely (using an API key for authentication). The Codefresh CLI is already available as a [public Docker image](https://hub.docker.com/r/codefresh/cli/), so creating a GitHub action with it is a trivial process.
 
