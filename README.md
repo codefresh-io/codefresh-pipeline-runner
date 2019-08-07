@@ -35,7 +35,7 @@ Select the pipeline runner action and click the "Edit" button. On the right side
 
 * A secret with name `CF_API_KEY` and value your Codefresh API token
 * An environment variable called `PIPELINE_NAME` with a value of `<project_name>/<pipeline_name>`
-* An environment variable called `TRIGGER_NAME` with trigger name attached to this pipeline. See the [triggers section](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/triggers/) for more information
+* An optional environment variable called `TRIGGER_NAME` with trigger name attached to this pipeline. See the [triggers section](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/triggers/) for more information
 
 Click the Done button to save your changes and commit.
 
