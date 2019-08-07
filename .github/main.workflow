@@ -6,8 +6,7 @@ workflow "pipeline runner" {
 action "run pipeline" {
   uses = "./"
   env = {
-    TRIGGER_NAME = "codefresh-trigger"
-    PIPELINE_NAME = "codefresh-pipeline"
+    PIPELINE_NAME = "runp/runp"
   }
   secrets = ["CF_API_KEY"]
 }
