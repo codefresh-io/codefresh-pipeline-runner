@@ -4,7 +4,7 @@
 # in case of push event
 BRANCH=$(cat $GITHUB_EVENT_PATH | jq -r .ref | awk -F '/' '{print $3}')
 
-if [-z "$BRANCH"]
+if [ -z "$BRANCH" ]
 then
 	# in case of pullresuest event
 	BRANCH=$(cat $GITHUB_EVENT_PATH | jq -r head.ref)
@@ -14,7 +14,7 @@ codefresh auth create-context context --api-key $CF_API_KEY
 codefresh auth use-contex context
 
 
-if [-n "$TRIGGER_NAME"]
+if [ -n "$TRIGGER_NAME" ]
 then
    codefresh run $PIPELINE_NAME --trigger=$TRIGGER_NAME --branch=$BRANCH
 else
