@@ -1,3 +1,7 @@
+# Codefresh pipeline runner
+
+This action runs [codefresh](https://g.codefresh.io) pipeline using codefresh api key
+
 # Integrating Codefresh pipelines with GitHub actions
 
 GitHub actions are a flexible way to respond to GitHub events and perform one or more tasks
@@ -40,6 +44,8 @@ Select the pipeline runner action and click the "Edit" button. On the right side
 Click the Done button to save your changes and commit.
 
 Now next time you commit anything in your Github repository the Codefresh pipeline will also execute.
+
+## Usage
 
 An example to run codefresh pipeline that can compile, test , docker build and deploy to kubernetes
 ```
