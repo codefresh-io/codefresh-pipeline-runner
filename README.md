@@ -4,7 +4,7 @@ Codefresh is a CI/CD platform that engineers actually love to use. The [Codefres
 
 It is based on the [Codefresh CLI](https://codefresh-io.github.io/cli/) which can execute Codefresh pipelines remotely (using an API key for authentication). The Codefresh CLI is already available as a [public Docker image](https://hub.docker.com/r/codefresh/cli/), so creating a GitHub action with it is a trivial process.
 
-# Integrating Codefresh pipelines with GitHub actions
+## Integrating Codefresh pipelines with GitHub actions
 
 GitHub actions are a flexible way to respond to GitHub events and perform one or more tasks
 when a specific GitHub event happens. GitHub actions can also use Codefresh pipelines as a back-end
