@@ -48,6 +48,9 @@ inputs:
   TRIGGER_NAME:
     description: 'Trigger name attached to this pipeline'
     required: false
+  CF_API_KEY
+    description: 'Codefresh api token'
+    required: true
 outputs: 
   status:
     description: 'Pipeline status that was executed on codefresh'
