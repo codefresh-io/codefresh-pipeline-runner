@@ -1,11 +1,13 @@
-# Codefresh pipeline runner
+# Codefresh pipeline runner GitHub Action
 
-This repository holds a GitHub action that can be used to call existing [Codefresh pipelines](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/). It is based on the [Codefresh CLI](https://codefresh-io.github.io/cli/) which can execute Codefresh pipelines remotely (using an API key for authentication). The Codefresh CLI is already available as a [public Docker image](https://hub.docker.com/r/codefresh/cli/), so creating a GitHub action with it is a trivial process.
+Codefresh is a CI/CD platform that engineers actually love to use. The [Codefresh pipeline](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/) runner GitHub action will trigger an existing Codefresh pipeline from a GitHub action.
+
+It is based on the [Codefresh CLI](https://codefresh-io.github.io/cli/) which can execute Codefresh pipelines remotely (using an API key for authentication). The Codefresh CLI is already available as a [public Docker image](https://hub.docker.com/r/codefresh/cli/), so creating a GitHub action with it is a trivial process.
 
 # Integrating Codefresh pipelines with GitHub actions
 
 GitHub actions are a flexible way to respond to GitHub events and perform one or more tasks
-when a specific GitHub event happens. GitHub actions can also use Codefresh pipeline as a back-end
+when a specific GitHub event happens. GitHub actions can also use Codefresh pipelines as a back-end
 resulting in a very powerful combination where the first action starts from GitHub, but Codefresh takes care
 of the actual compilation or deployment in a pipeline.
 
@@ -32,6 +34,7 @@ In order to use the GitHub action, fork this repository and then navigate to the
 
 Select the pipeline runner action and click the "Edit" button. On the right side panel enter the following
 
+### Inputs
 * A secret with name `CF_API_KEY` and value your Codefresh API token
 * An environment variable called `PIPELINE_NAME` with a value of `<project_name>/<pipeline_name>`
 * An optional environment variable called `TRIGGER_NAME` with trigger name attached to this pipeline. See the [triggers section](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/triggers/) for more information
@@ -40,9 +43,12 @@ Click the Done button to save your changes and commit.
 
 Now next time you commit anything in your GitHub repository the Codefresh pipeline will also execute.
 
+### Outputs
+The action will report if the pipeline execution was successful. For example, if your pipeline has unit tests that fail, by default, it will report the action failed. The logs from the pipeline will be streamed into the Github action console.
+
 ## Usage
 
-An example to run codefresh pipeline that can compile, test , docker build and deploy to kubernetes
+Running a Codefresh pipeline to compile, test, docker build, and deploy to kubernetes
 ```
 name: 'Codefresh pipeline runner'
 description: 'GitHub action that run codefresh pipeline'
