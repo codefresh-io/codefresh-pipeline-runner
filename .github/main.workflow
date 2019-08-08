@@ -1,13 +1,9 @@
-workflow "pipeline runner" {
+workflow "test" {
   on = "push"
-  resolves = "run pipeline"
+  resolves = ["demo"]
 }
-
-action "run pipeline" {
-  uses = "./"
-  env = {
-    TRIGGER_NAME = "codefresh-trigger"
-    PIPELINE_NAME = "codefresh-pipeline"
-  }
-  secrets = ["CF_API_KEY"]
+action "demo" {
+  needs = "ACTION1"
+  uses = "docker://alpine"
+  runs = ["sh", "-c", "echo $GITHUB_SHA"] 
 }
