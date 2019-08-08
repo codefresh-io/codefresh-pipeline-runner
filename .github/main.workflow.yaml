@@ -1,0 +1,15 @@
+version: 1.0
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    actions:
+    - name: 'Hello World!'
+      uses: actions/helloworld@master
+      with:
+        greeting: 'Hello'
+      id: hello-world
+    - run: echo "The action ran at ${{ actions.hello-world.outputs.time }}"
