@@ -1,4 +1,4 @@
-# Codefresh pipeline runner GitHub Action 
+# Codefresh pipeline runner GitHub Action  
 
 Codefresh is a CI/CD platform that engineers actually love to use. The [Codefresh pipeline](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/) runner GitHub action will trigger an existing Codefresh pipeline from a GitHub action.
 
