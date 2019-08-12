@@ -43,7 +43,7 @@ jobs:
         uses: actions/checkout@master
         
       - name: 'run pipeline'
-        uses: ./codefresh-action
+        uses: actions/codefresh-pipeline-runner@v1
         env:
           PIPELINE_NAME: 'codefresh-pipeline'
           TRIGGER_NAME: 'codefresh-trigger'
