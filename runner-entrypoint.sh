@@ -16,7 +16,7 @@ fi
 
 echo "$CF_API_KEY"
 
-codefresh auth create-context context --api-key $CF_API_KEY
+codefresh auth create-context context --api-key 5d51a216c90e6b678200ed07.f3b2e740b5ab1859505cbdd91a537ec5
 codefresh auth use-contex context
 
 
