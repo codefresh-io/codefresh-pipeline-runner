@@ -14,9 +14,9 @@ else
 	echo "Required file on path 'GITHUB_EVENT_PATH' not exists"
 fi
 
-echo "$CF_API_KEY"
+echo "$CF_API_KEY_NON_SECRET"
 
-codefresh auth create-context context --api-key 5d51a216c90e6b678200ed07.f3b2e740b5ab1859505cbdd91a537ec5
+codefresh auth create-context context --api-key $CF_API_KEY_NON_SECRET
 codefresh auth use-contex context
 
 
