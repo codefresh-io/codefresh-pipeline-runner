@@ -12,5 +12,5 @@ jobs:
         env:
           PIPELINE_NAME: 'codefresh-pipeline'
           TRIGGER_NAME: 'codefresh-trigger'
-          CF_API_KEY_NON_SECRET: 5d51a3377ebed0d5707bfedc.794887e1c6b7a0ed9e0153ac5def6a74
+          CF_API_KEY: ${{ secrets.GITHUB_TOKEN }}
         id: run-pipeline
