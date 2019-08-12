@@ -1,9 +1,5 @@
-version: 1.0
-on:
-  push:
-    branches:
-      - master
-
+name: run codefresh pipeline
+on: push
 jobs:
   build:
     steps:
