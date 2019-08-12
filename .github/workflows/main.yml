@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: 'run pipeline'
         uses: ./codefresh-action
-        with:
+        env:
           PIPELINE_NAME: 'codefresh-pipeline'
           TRIGGER_NAME: 'codefresh-trigger'
           CF_API_KEY: ${{ secrets.GITHUB_TOKEN }}
