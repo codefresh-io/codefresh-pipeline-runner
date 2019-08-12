@@ -30,54 +30,27 @@ The result is that all the details from the Git push (i.e. the GIT hash) are tra
 
 ## How to use the Codefresh GitHub action
 
-Running a Codefresh pipeline to compile, test, docker build, and deploy to kubernetes
-```
-name: 'Codefresh pipeline runner'
-description: 'GitHub action that run codefresh pipeline'
-author: 'codefresh'
-branding:
-  icon: 'arrow-right-circle'
-  color: 'green'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-inputs:
-  PIPELINE_NAME:
-    description: 'Codefresh pipeline name in format <project_name>/<pipeline_name>'
-    required: true
-  TRIGGER_NAME:
-    description: 'Trigger name attached to this pipeline'
-    required: false
-  CF_API_KEY
-    description: 'Codefresh api token'
-    required: true
-outputs: 
-  status:
-    description: 'Pipeline status that was executed on codefresh'
-
-```
-
 An example of workflow
 
 ```
-version: 1.0
-on:
-  push:
-    branches:
-    - master
-
+name: run codefresh pipeline
+on: push
 jobs:
   build:
+    runs-on: ubuntu-18.04
     steps:
-    - name: 'run pipeline'
-      uses: ./
-      with:
-        PIPELINE_NAME: 'codefresh-pipeline'
-        TRIGGER_NAME: 'codefresh-trigger'
-        CF_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-      id: run-pipeline
+      - name: Checkout
+        uses: actions/checkout@master
+        
+      - name: 'run pipeline'
+        uses: ./codefresh-action
+        env:
+          PIPELINE_NAME: 'codefresh-pipeline'
+          TRIGGER_NAME: 'codefresh-trigger'
+          CF_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+        id: run-pipeline
 ```
-### Inputs
+### Env variables
 * A secret with name `CF_API_KEY` and value your Codefresh API token ( https://codefresh.io/docs/docs/integrations/codefresh-api/#authentication-instructions )
 * An environment variable called `PIPELINE_NAME` with a value of `<project_name>/<pipeline_name>`
 * An optional environment variable called `TRIGGER_NAME` with trigger name attached to this pipeline. See the [triggers section](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/triggers/) for more information
