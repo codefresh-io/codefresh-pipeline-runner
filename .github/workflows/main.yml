@@ -6,9 +6,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-        
+
       - name: 'run pipeline'
-        uses: ./codefresh-action
+        uses: ./
         env:
           PIPELINE_NAME: 'codefresh-pipeline'
           TRIGGER_NAME: 'codefresh-trigger'
