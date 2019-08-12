@@ -1,11 +1,24 @@
 name: run codefresh pipeline
 on: push
 jobs:
+
+  clone:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: 'clone'
+      - uses: actions/checkout@master
+        env:
+          PIPELINE_NAME: 'codefresh-pipeline'
+          TRIGGER_NAME: 'codefresh-trigger'
+          CF_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+        id: run-pipeline
+
+
   build:
     runs-on: ubuntu-18.04
     steps:
       - name: 'run pipeline'
-        uses: codefresh-io/codefresh-pip-runner-action@master
+        uses: ./codefresh-action
         env:
           PIPELINE_NAME: 'codefresh-pipeline'
           TRIGGER_NAME: 'codefresh-trigger'

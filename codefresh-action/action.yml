@@ -1,0 +1,9 @@
+name: 'Codefresh pipeline runner'
+description: 'Github action that runs codefresh pipeline'
+author: 'codefresh'
+branding:
+  icon: 'arrow-right-circle'
+  color: 'green'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
