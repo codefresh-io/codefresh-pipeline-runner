@@ -1,6 +1,6 @@
 name: 'Codefresh pipeline runner'
 description: 'Github action that runs codefresh pipeline'
-author: 'codefresh'
+author: 'codefresh-inc'
 branding:
   icon: 'arrow-right-circle'
   color: 'green'
