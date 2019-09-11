@@ -11,6 +11,8 @@ when a specific GitHub event happens. GitHub actions can also use Codefresh pipe
 resulting in a very powerful combination where the first action starts from GitHub, but Codefresh takes care
 of the actual compilation or deployment in a pipeline.
 
+![Alt Text](https://codefresh.io/wp-content/uploads/2019/09/github-action-demo.gif)
+
 ## Prerequisites
 
 Make sure that you have
