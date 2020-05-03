@@ -8,7 +8,7 @@ if [ -f $GITHUB_EVENT_PATH ]; then
 	if [ -z "$BRANCH" ]
     then
     	# in case of pullresuest event
-    	BRANCH=$(cat $GITHUB_EVENT_PATH | jq -r head.ref)
+    	BRANCH=$(cat $GITHUB_EVENT_PATH | jq -r .pull_request.head.ref)
     fi
 else
 	echo "Required file on path 'GITHUB_EVENT_PATH' not exists"
