@@ -16,6 +16,12 @@ fi
 codefresh auth create-context context --api-key $CF_API_KEY
 codefresh auth use-contex context
 
+if [ -n "$CF_BRANCH" ]
+then
+  BRANCH=$CF_BRANCH
+fi
+
+echo "Execute pipeline with branch $BRANCH"
 
 if [ -n "$TRIGGER_NAME" ]
 then
