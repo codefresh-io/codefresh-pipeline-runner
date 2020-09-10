@@ -11,7 +11,7 @@ when a specific GitHub event happens. GitHub actions can also use Codefresh pipe
 resulting in a very powerful combination where the first action starts from GitHub, but Codefresh takes care
 of the actual compilation or deployment in a pipeline.
 
-<img src="/art/github-action-demo.gif?raw=true" width="200px">
+<img src="/art/github-action-demo.gif?raw=true" width="600px">
 
 ## Prerequisites
 
@@ -49,7 +49,7 @@ jobs:
         env:
           PIPELINE_NAME: 'codefresh-pipeline'
           TRIGGER_NAME: 'codefresh-trigger'
-          CF_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
         id: run-pipeline
 ```
 ### Env variables
