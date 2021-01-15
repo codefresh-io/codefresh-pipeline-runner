@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # parse branch
 if [ -f $GITHUB_EVENT_PATH ]; then
