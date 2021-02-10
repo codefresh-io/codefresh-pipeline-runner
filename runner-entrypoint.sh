@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # parse branch
 if [ -f $GITHUB_EVENT_PATH ]; then
@@ -25,7 +25,7 @@ echo "Execute pipeline with branch $BRANCH"
 
 if [ -n "$TRIGGER_NAME" ]
 then
-	codefresh run $PIPELINE_NAME --trigger=$TRIGGER_NAME --branch=$BRANCH
+	codefresh run $PIPELINE_NAME --trigger=$TRIGGER_NAME --branch=$BRANCH ${@:1}
 else
-	codefresh run $PIPELINE_NAME --branch=$BRANCH
+	codefresh run $PIPELINE_NAME --branch=$BRANCH ${@:1}
 fi

@@ -1,9 +1,15 @@
 name: 'Codefresh pipeline runner'
 description: 'Github action that runs codefresh pipeline'
 author: 'codefresh-inc'
+inputs:
+  args:
+    description: 'codefresh cli build variables, see https://codefresh-io.github.io/cli/pipelines/run-pipeline/#setting-variables-through-the-command for more information.'
+    required: false
 branding:
   icon: 'arrow-right-circle'
   color: 'green'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
