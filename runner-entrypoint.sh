@@ -14,7 +14,7 @@ else
 	echo "Required file on path 'GITHUB_EVENT_PATH' not exists"
 fi
 codefresh auth create-context context --api-key $CF_API_KEY
-codefresh auth use-contex context
+codefresh auth use-context context
 
 if [ -n "$CF_BRANCH" ]
 then
